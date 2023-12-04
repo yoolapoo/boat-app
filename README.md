@@ -22,12 +22,12 @@ npm run dev
 ``` 
 There are two users already registered
 
-User role
+User role:
 user / 12345678
 
-Admin role
+Admin role:
 admin / 12345678
 
 
-### You cannot acces directly to api/boats
-in fact this route is seured and you need to be authorized
+### You cannot access directly to api/boats
+in fact this route is secured, you need to be authorized
