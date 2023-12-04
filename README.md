@@ -1,33 +1,43 @@
-# boat-app
+# Boat-App
 
-boat management project Two folders existed in this project an api and a front end
+![Boat Icon](/front/public/boat.ico)
 
-Api is made with spring boot 3
-Front end is VueJS application
+The Boat Management project consists of two folders: `api` and `front-end`.
 
-## To run API
-You need to run docker-compose before,
-launch Spring Application
+- The API is developed using Spring Boot 3.
+- The front end is a VueJS application.
 
-The docker compose create a Mongo DB Instance
-with some initialized data
+## Running the API
+
+Before launching the Spring Application, ensure you run Docker Compose to create a MongoDB instance with pre-initialized data.
+
+The API is accessible on port 8090.
+
+[Local URL]('http://localhost:809O/')
 
 
-## To Run VUEJS
+## Running VueJS
 
-```
+```bash
 cd c:\front
 run install
 npm run dev
-``` 
-There are two users already registered
+```  
 
-User role:
-user / 12345678
+The front end is hosted on port 8091.
 
-Admin role:
-admin / 12345678
+[Local URL]('http://localhost:8091/')
 
+Two users are already registered:
 
-### You cannot access directly to api/boats
-in fact this route is secured, you need to be authorized
+**User Role:**
+- Username: user
+- Password: 12345678
+
+**Admin Role:**
+- Username: admin
+- Password: 12345678
+
+### Accessing API/Boats
+
+Direct access to `api/boats` is restricted; authorization is required to access this route.
