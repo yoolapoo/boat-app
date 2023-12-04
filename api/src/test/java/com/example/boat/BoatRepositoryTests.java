@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(SpringExtension.class)
 @DataJpaTest
-class BoatRepositoryTest {
+class BoatRepositoryTests {
 
 	@Autowired
 	private BoatRepository boatRepository;
@@ -36,5 +36,4 @@ class BoatRepositoryTest {
 		assertEquals(boatName, boats.get().findFirst().isPresent() ? boats.get().findFirst().get().getName() : "");
 	}
 
-	// Additional tests for other repository methods
 }

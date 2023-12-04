@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
+import javax.crypto.spec.SecretKeySpec;
+import java.nio.charset.StandardCharsets;
 import java.security.Key;
 import java.util.Date;
 
@@ -36,7 +38,8 @@ public class JwtUtils {
 	}
 
 	private Key key() {
-		return Keys.hmacShaKeyFor(Decoders.BASE64.decode(jwtSecret));
+		byte[] apiKeySecretBytes = jwtSecret.getBytes(StandardCharsets.UTF_8);
+		return new SecretKeySpec(apiKeySecretBytes, "HmacSHA512");
 	}
 
 	public String getUserNameFromJwtToken(String token) {

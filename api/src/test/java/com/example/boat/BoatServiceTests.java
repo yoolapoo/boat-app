@@ -63,7 +63,5 @@ class BoatServiceTests {
 		Assertions.assertTrue(result);
 		verify(boatRepository, times(1)).deleteById(boatId);
 	}
-
-	// Additional tests for other service methods
 }
 
