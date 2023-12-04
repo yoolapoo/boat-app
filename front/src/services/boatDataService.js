@@ -10,15 +10,15 @@ class BoatDataService {
     }
 
     create(data) {
-        return http.post("/boats", data);
+        return http.post("/boats/create", data);
     }
 
     update(id, data) {
-        return http.put(`/boats/${id}`, data);
+        return http.put(`/boats/update/${id}`, data);
     }
 
     delete(id) {
-        return http.delete(`/boats/${id}`);
+        return http.delete(`/boats/delete/${id}`);
     }
 
     deleteAll() {

@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import BoatDataService from "../services/BoatDataService";
+import BoatDataService from "../services/boatDataService";
 
 export default {
   name: "Boat",
