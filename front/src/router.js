@@ -52,7 +52,6 @@ const routes = [
   },
   {
     path: "/boats",
-    alias: "/boats",
     name: "boats",
     component: () => import("./components/BoatList")
   },

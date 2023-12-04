@@ -1,33 +1,33 @@
 import http from "../http-common";
 
-class BoatDataService {
+class boatDataService {
     getAll() {
-        return http.get("/boats");
+        return http.get("/");
     }
 
     get(id) {
-        return http.get(`/boats/${id}`);
+        return http.get(`/${id}`);
     }
 
     create(data) {
-        return http.post("/boats/create", data);
+        return http.post("/create", data);
     }
 
     update(id, data) {
-        return http.put(`/boats/update/${id}`, data);
+        return http.put(`/update/${id}`, data);
     }
 
     delete(id) {
-        return http.delete(`/boats/delete/${id}`);
+        return http.delete(`/delete/${id}`);
     }
 
     deleteAll() {
-        return http.delete(`/boats`);
+        return http.delete(``);
     }
 
     findByTitle(title) {
-        return http.get(`/boats?title=${title}`);
+        return http.get(`?title=${title}`);
     }
 }
 
-export default new BoatDataService();
+export default new boatDataService();

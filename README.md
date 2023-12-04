@@ -28,15 +28,6 @@ The front end is hosted on port 8091.
 
 [Local URL]('http://localhost:8091/')
 
-Two users are already registered:
-
-**User Role:**
-- Username: user
-- Password: 12345678
-
-**Admin Role:**
-- Username: admin
-- Password: 12345678
 
 ### Accessing API/Boats
 

@@ -11,6 +11,7 @@ import com.example.boat.security.repository.RoleRepository;
 import com.example.boat.security.repository.UserRepository;
 import com.example.boat.security.service.UserDetailsImpl;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -27,24 +28,15 @@ import java.util.Set;
 import static com.example.boat.security.model.ERole.*;
 
 @CrossOrigin(origins = "*", maxAge = 3600) @RestController @RequestMapping("/api/auth") public class AuthController {
-	final AuthenticationManager authenticationManager;
+	@Autowired AuthenticationManager authenticationManager;
 
-	final UserRepository userRepository;
+	@Autowired UserRepository userRepository;
 
-	final RoleRepository roleRepository;
+	@Autowired RoleRepository roleRepository;
 
-	final PasswordEncoder encoder;
+	@Autowired PasswordEncoder encoder;
 
-	final JwtUtils jwtUtils;
-
-	public AuthController(AuthenticationManager authenticationManager, UserRepository userRepository, RoleRepository roleRepository,
-			PasswordEncoder encoder, JwtUtils jwtUtils) {
-		this.authenticationManager = authenticationManager;
-		this.userRepository = userRepository;
-		this.roleRepository = roleRepository;
-		this.encoder = encoder;
-		this.jwtUtils = jwtUtils;
-	}
+	@Autowired JwtUtils jwtUtils;
 
 	@PostMapping("/signin") public ResponseEntity<JwtResponse> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
