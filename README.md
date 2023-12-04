@@ -19,9 +19,9 @@ The API is accessible on port 8090.
 ## Running VueJS
 
 ```bash
-cd c:\front
-run install
-npm run dev
+cd .\front
+npm install
+npm run serve
 ```  
 
 The front end is hosted on port 8091.
