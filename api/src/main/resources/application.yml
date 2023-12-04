@@ -1,0 +1,37 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: boat-application
+
+  data:
+    mongodb:
+      database: boat_db
+      host: localhost
+      port: 27017
+      username: admin
+      password: 123456
+boat:
+  app:
+    jwtSecret: ======================Boat=Spring===========================
+    jwtExpirationMs: 86400000
+
+  basic:
+    enabled: false
+
+  #ignored: /webjars/**, /resources/**, /static/**, /public/**, /swagger-ui/**, /v3/api-docs/**
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics
+
+info:
+  app:
+    name: Boat Application
+    description: Boat management application
+    version: 1.0.0
+
+
