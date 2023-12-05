@@ -7,6 +7,9 @@ const Profile = () => import("./components/Profile.vue")
 const BoardAdmin = () => import("./components/BoardAdmin.vue")
 const BoardModerator = () => import("./components/BoardModerator.vue")
 const BoardUser = () => import("./components/BoardUser.vue")
+const BoatList = () => import("./components/BoatList.vue")
+const Boat = () => import("./components/Boat.vue")
+const AddBoat = () => import("./components/AddBoat.vue")
 
 const routes = [
   {
@@ -53,17 +56,17 @@ const routes = [
   {
     path: "/boats",
     name: "boats",
-    component: () => import("./components/BoatList")
+    component: BoatList
   },
   {
     path: "/boats/:id",
     name: "boat-details",
-    component: () => import("./components/Boat")
+    component: Boat
   },
   {
     path: "/add",
     name: "add",
-    component: () => import("./components/AddBoat")
+    component: AddBoat
   }
 ];
 

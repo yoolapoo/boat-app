@@ -1,5 +1,6 @@
 package com.example.boat.security.controller;
 
+import com.example.boat.exception.RoleNotFoundException;
 import com.example.boat.security.jwt.JwtUtils;
 import com.example.boat.security.model.Role;
 import com.example.boat.security.model.User;
@@ -69,24 +70,24 @@ import static com.example.boat.security.model.ERole.*;
 		Set<Role> roles = new HashSet<>();
 
 		if (strRoles == null) {
-			Role userRole = roleRepository.findByName(ROLE_USER).orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+			Role userRole = roleRepository.findByName(ROLE_USER).orElseThrow(RoleNotFoundException::new);
 			roles.add(userRole);
 		} else {
 			strRoles.forEach(role -> {
 				switch (role) {
 				case "admin" -> {
 					Role adminRole = roleRepository.findByName(ROLE_ADMIN)
-							.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+							.orElseThrow(RoleNotFoundException::new);
 					roles.add(adminRole);
 				}
 				case "mod" -> {
 					Role modRole = roleRepository.findByName(ROLE_MODERATOR)
-							.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+							.orElseThrow(RoleNotFoundException::new);
 					roles.add(modRole);
 				}
 				default -> {
 					Role userRole = roleRepository.findByName(ROLE_USER)
-							.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+							.orElseThrow(RoleNotFoundException::new);
 					roles.add(userRole);
 				}
 				}

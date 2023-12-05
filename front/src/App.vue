@@ -36,10 +36,10 @@
         <li class="nav-item">
           <router-link to="/boats" class="nav-link">Boats</router-link>
         </li>
-        <li class="nav-item">
+        <li class="nav-item mx-2">
           <router-link to="/add" class="nav-link">Add</router-link>
         </li>
-        <li class="nav-item">
+        <li class="nav-item mx-2">
           <router-link to="/profile" class="nav-link">
             <font-awesome-icon icon="user" />
             {{ currentUser.username }}
@@ -66,14 +66,14 @@ export default {
       return this.$store.state.auth.user;
     },
     showAdminBoard() {
-      if (this.currentUser && this.currentUser['roles']) {
+      if (this.currentUser?.['roles']) {
         return this.currentUser['roles'].includes('ROLE_ADMIN');
       }
 
       return false;
     },
     showModeratorBoard() {
-      if (this.currentUser && this.currentUser['roles']) {
+      if (this.currentUser?.['roles']) {
         return this.currentUser['roles'].includes('ROLE_MODERATOR');
       }
 

@@ -9,7 +9,7 @@
       <Form @submit="handleLogin" :validation-schema="schema">
         <div class="form-group">
           <label for="username">Username</label>
-          <Field name="username" type="text" class="form-control"/>
+          <Field name="username" type="text" class="form-control" autocomplete="current-username"/>
           <ErrorMessage name="username" class="error-feedback" />
         </div>
         <div class="form-group">
@@ -71,13 +71,18 @@ export default {
       this.$router.push({name: "boats"});
     }
   },
+  mounted() {
+    if(this.loggedIn()) {
+      this.$router.push("/boats").then(()=> console.log("Updated route", this.$route))
+    }
+  },
   methods: {
     handleLogin(user) {
       this.loading = true;
 
       this.$store.dispatch("auth/login", user).then(
         () => {
-          this.$router.push({name: "boats"});
+          this.$router.push("/boats").then(()=> console.log("Updated route", this.$route))
         },
         (error) => {
           this.loading = false;

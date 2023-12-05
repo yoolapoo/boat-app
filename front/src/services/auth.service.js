@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {throws} from "assert";
 
 const API_URL = 'http://localhost:8090/api/auth/';
 
@@ -15,7 +16,7 @@ class AuthService {
                 }
 
                 return response.data;
-            });
+            }).catch(error => throw error);
     }
 
     logout() {
